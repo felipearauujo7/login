@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprestimos</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: black;
+        color: black;
+        margin: 0;
+    }
+
+    #buscador {
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    #searchInput {
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    #botao {
+        padding: 4px;
+        cursor: pointer;
+    }
+
+    table {
+        width: 98%;
+        margin: auto;
+        border-collapse: collapse;
+        position: relative;
+        background-color: white;
+    }
+
+    thead>tr>th {
+        position: sticky;
+        top: -1px;
+        background-color: gray;
+    }
+
+    thead,
+    tfoot {
+        background-color: gray;
+    }
+
+    caption {
+        font-weight: bolder;
+        font-size: 1.3em;
+        padding: 10px;
+        color: white;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgba(128, 128, 128, 0.288);
+    }
+
+    th {
+        background-color: gray;
+        height: 40px;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 2px;
+        text-align: center;
+    }
+
+    #container {
+        overflow-x: auto;
+        max-height: 690px;
+        overflow-y: scroll;
+    }
+
+    .saida {
+        background-color: rgba(255, 0, 0, 0.377);
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="buscador">
+            <input type="text" id="searchInput" placeholder="Buscar por nome">
+            <button id="botao" onclick="searchTable()">Buscar</button>
+        </div>
+        <table>
+            <caption>EMPRÉSTIMOS</caption>
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>CAPITAL</th>
+                    <th>%</th>
+                    <th>JUROS</th>
+                    <th>TOTAL</th>
+                    <th>DATA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Lara Julianna</th>
+                    <td>70.00</td>
+                    <td>43%</td>
+                    <td>30.00</td>
+                    <td>100.00</td>
+                    <td>01/03</td>
+                </tr>
+                <tr>
+                    <th>Lucas Brenner</th>
+                    <td>500.00</td>
+                    <td>25%</td>
+                    <td>120.00</td>
+                    <td>620.00</td>
+                    <td>01/03</td>
+                </tr>
+                <tr>
+                    <th>João Pedro</th>
+                    <td>500.00</td>
+                    <td>25%</td>
+                    <td>120.00</td>
+                    <td>620.00</td>
+                    <td>01/03</td>
+                </tr>
+                <tr>
+                    <th>Lucas Brenner</th>
+                    <td>200.00</td>
+                    <td>30%</td>
+                    <td>60.00</td>
+                    <td>260.00</td>
+                    <td>02/03</td>
+                </tr>
+                <tr>
+                    <th>Iago Primo DF</th>
+                    <td>1000.00</td>
+                    <td>20%</td>
+                    <td>200.00</td>
+                    <td>1200.00</td>
+                    <td>02/03</td>
+                </tr>
+                <tr>
+                    <th>Lara Julianna</th>
+                    <td>400.00</td>
+                    <td>20%</td>
+                    <td>80.00</td>
+                    <td>480.00</td>
+                    <td>03/03</td>
+                </tr>
+                <tr>
+                    <th style="background-color: rgba(255, 0, 0, 0.377);">Saída Careca</th>
+                    <td>300.00</td>
+                    <td>10%</td>
+                    <td>30.00</td>
+                    <td>-330.00</td>
+                    <td>05/03</td>
+                </tr>
+                <tr>
+                    <th>Lara Julianna</th>
+                    <td>70.00</td>
+                    <td>43%</td>
+                    <td>30.00</td>
+                    <td>100.00</td>
+                    <td>05/03</td>
+                </tr>
+                <tr>
+                    <th>Maria Arcangela</th>
+                    <td>180.00</td>
+                    <td>22%</td>
+                    <td>40.00</td>
+                    <td>220.00</td>
+                    <td>05/03</td>
+                </tr>
+                <tr>
+                    <th style="background-color: rgba(255, 0, 0, 0.377);">Saída Careca</th>
+                    <td>550.00</td>
+                    <td>10%</td>
+                    <td>55.00</td>
+                    <td>-605.00</td>
+                    <td>08/03</td>
+                </tr>
+                <tr>
+                    <th>joao amg lara</th>
+                    <td>500.00</td>
+                    <td>20%</td>
+                    <td>100.00</td>
+                    <td>600.00</td>
+                    <td>07/02</td>
+                </tr>
+                <tr>
+                    <th>Leandro amg lara</th>
+                    <td>50.00</td>
+                    <td>40%</td>
+                    <td>20.00</td>
+                    <td>70.00</td>
+                    <td>07/02</td>
+                </tr>
+                <tr>
+                    <th>Lucas Brenner</th>
+                    <td>700.00</td>
+                    <td>25%</td>
+                    <td>175.00</td>
+                    <td>875.00</td>
+                    <td>10/02</td>
+                </tr>
+                <tr>
+                    <th>Amg Lucas Brenner</th>
+                    <td>150.00</td>
+                    <td>27%</td>
+                    <td>40.00</td>
+                    <td>190.00</td>
+                    <td>10/02</td>
+                </tr>
+                <tr>
+                    <th style="background-color: rgba(255, 0, 0, 0.377);">Saída Careca</th>
+                    <td>400.00</td>
+                    <td>10%</td>
+                    <td>40.00</td>
+                    <td>-440.00</td>
+                    <td>12/02</td>
+                </tr>
+                <tr>
+                    <th>Lara Julianna</th>
+                    <td>120.00</td>
+                    <td>34%</td>
+                    <td>40.00</td>
+                    <td>160.00</td>
+                    <td>12/02</td>
+                </tr>
+                <tr>
+                    <th style="background-color: rgba(255, 0, 0, 0.377);">Saída Pele</th>
+                    <td>60.00</td>
+                    <td>34%</td>
+                    <td>20.00</td>
+                    <td>-80.00</td>
+                    <td>12/02</td>
+                </tr>
+                <tr>
+                    <th>Lucas Brenner</th>
+                    <td>100.00</td>
+                    <td>30%</td>
+                    <td>30.00</td>
+                    <td>130.00</td>
+                    <td>14/02</td>
+                </tr>
+                <tr>
+                    <th>Murilo</th>
+                    <td>100.00</td>
+                    <td>60%</td>
+                    <td>30.00</td>
+                    <td>160.00</td>
+                    <td>15/02</td>
+                </tr>
+                <tr>
+                    <th>Lucas amg victor</th>
+                    <td>100.00</td>
+                    <td>30%</td>
+                    <td>30.00</td>
+                    <td>130.00</td>
+                    <td>16/02</td>
+                </tr>
+                <tr>
+                    <th>André Phelipe</th>
+                    <td>200.00</td>
+                    <td>20%</td>
+                    <td>40.00</td>
+                    <td>240.00</td>
+                    <td>16/02</td>
+                </tr>
+                <tr>
+                    <th style="background-color: rgba(255, 0, 0, 0.377);">Saída Luan</th>
+                    <td>100.00</td>
+                    <td>10%</td>
+                    <td>10.00</td>
+                    <td>-110.00</td>
+                    <td>16/02</td>
+                </tr>
+                <tr>
+                    <th>Lucas Brenner</th>
+                    <td>400.00</td>
+                    <td>20%</td>
+                    <td>80.00</td>
+                    <td>480.00</td>
+                    <td>17/02</td>
+                </tr>
+                <tr>
+                    <th style="background-color: rgba(255, 0, 0, 0.377);">Saída Careca</th>
+                    <td>200.00</td>
+                    <td>10%</td>
+                    <td>20.00</td>
+                    <td>-220.00</td>
+                    <td>19/02</td>
+                </tr>
+                <tr>
+                    <th style="background-color: rgba(255, 0, 0, 0.377);">Saída Pele</th>
+                    <td>70.00</td>
+                    <td>29%</td>
+                    <td>20.00</td>
+                    <td>-90.00</td>
+                    <td>19/02</td>
+                </tr>
+                <tr>
+                    <th>Lucas Brenner</th>
+                    <td>100.00</td>
+                    <td>30%</td>
+                    <td>30.00</td>
+                    <td>130.00</td>
+                    <td>22/02</td>
+                </tr>
+                <tr>
+                    <th>João Pedro</th>
+                    <td>170.00</td>
+                    <td>24%</td>
+                    <td>40.00</td>
+                    <td>210.00</td>
+                    <td>22/02</td>
+                </tr>
+                <tr>
+                    <th>Lara Julianna</th>
+                    <td>290.00</td>
+                    <td>20%</td>
+                    <td>58.00</td>
+                    <td>348.00</td>
+                    <td>23/02</td>
+                </tr>
+                <tr>
+                    <th>Lucas Brenner</th>
+                    <td>150.00</td>
+                    <td>20%</td>
+                    <td>30.00</td>
+                    <td>180.00</td>
+                    <td>24/02</td>
+                </tr>
+                <tr>
+                    <th>João Pedro</th>
+                    <td>420.00</td>
+                    <td>19%</td>
+                    <td>80.00</td>
+                    <td>500.00</td>
+                    <td>24/02</td>
+                </tr>
+                <tr>
+                    <th>Lucas Brenner</th>
+                    <td>180.00</td>
+                    <td>22%</td>
+                    <td>40.00</td>
+                    <td>220.00</td>
+                    <td>28/02</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="5">CAPITAL INVESTIDO</th>
+                    <td>3.808,00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+        function searchTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("th")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

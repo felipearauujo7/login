@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login JavaScript</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(90deg, blue, gray);
+            background-position: center center;
+            
+        }
+
+        form {
+            box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.459);
+            margin: 200px auto;
+            padding: 20px;
+            background: white;
+            text-align: center;
+            max-width: 300px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        form:hover {
+            background-color: rgba(255, 255, 255, 0.13);
+            transition: background-color 0.3s;
+        }
+
+        input {
+            display: block;
+            margin: 20px auto;
+            width: 250px;
+            height: 30px;
+            text-align: center;
+        }
+
+        #botao {
+            border-radius: 20px;
+        }
+
+        #botao:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.37);
+            cursor: pointer;
+            border: 2px solid rgba(0, 0, 255, 0.555);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <form>
+
+        <h3>Login</h3>
+        <input type="text" placeholder="Digite seu login" id="login">
+        <input type="password" placeholder="Digite sua senha" id="senha">
+        <input type="submit" id="botao" onclick="logar(); return false"> 
+
+    </form>
+
+    <script>
+
+        function logar() {
+
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+
+            if(login == "felipearauujo" && senha == 950308) {
+                alert("Logado com Sucesso!");
+                location.href = "home.html";
+            } else {
+                alert("Senha ou Usuario INCORRETO!")
+            }
+
+
+        }
+
+    </script>
+
+</body>
+</html>
